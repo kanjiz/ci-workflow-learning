@@ -34,29 +34,16 @@ jobs:
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
           arguments: build
-#      - name: Test Summary
-#        uses: test-summary/action@v2
-#        with:
-#          paths: "build/test-results/**/TEST-*.xml"
-#        if: always()
-
-      - name: Upload Unit Test Results
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v2
+      - name: Test Summary
+        uses: test-summary/action@v2
         with:
-          name: Unit Test Results
-          path: "build/test-results/**/TEST-*.xml"
+          paths: "build/test-results/**/TEST-*.xml"
+        if: always()
 
-#      - name: Download Artifacts
-#        if: success() || failure()
-#        uses: actions/download-artifact@v2
-#        with:
-#          path: artifacts
-#
-#      - name: Publish Unit Test Results
-#        uses: EnricoMi/publish-unit-test-result-action@v2
-#        with:
-#          junit_files: artifacts/**/*.xml
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          junit_files: 'build/test-results/**/TEST-*.xml'
 
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v3
