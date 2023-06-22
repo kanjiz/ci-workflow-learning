@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 public class HelloTest {
   @Test
@@ -10,20 +10,15 @@ public class HelloTest {
     assertTrue(true);
   }
 
-//  @Test
-//  public void testFail() {
-//    fail();
-//  }
-
   @Test
   public void testAdd() {
     int result = Hello.add(1, 2);
-    assertTrue(result == 3);
+    assertEquals(3, result);
   }
 
   @Test
   public void testAddFail() {
     int result = Hello.add(1, 2);
-    assertTrue(result == 4);
+    assertEquals(4, result);
   }
 }
