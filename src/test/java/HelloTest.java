@@ -1,24 +1,22 @@
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static com.google.common.truth.Truth.assertThat;
 
 public class HelloTest {
   @Test
   public void testMain() {
     Hello.main(null);
-    assertTrue(true);
+    assertThat(true).isTrue();
   }
 
   @Test
   public void testAdd() {
     int result = Hello.add(1, 2);
-    assertEquals(3, result);
+    assertThat(result).isEqualTo(3);
   }
 
   @Test
   public void testAddFail() {
     int result = Hello.add(1, 2);
-    assertEquals(4, result);
+    assertThat(result).isEqualTo(4);
   }
 }
