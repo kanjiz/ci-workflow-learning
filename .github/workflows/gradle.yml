@@ -47,13 +47,13 @@ jobs:
           name: Unit Test Results
           path: "build/test-results/**/TEST-*.xml"
 
-      - name: Download Artifacts
-        if: success() || failure()
-        uses: actions/download-artifact@v2
-        with:
-          path: artifacts
-
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        with:
-          junit_files: artifacts/**/*.xml
+#      - name: Download Artifacts
+#        if: success() || failure()
+#        uses: actions/download-artifact@v2
+#        with:
+#          path: artifacts
+#
+#      - name: Publish Unit Test Results
+#        uses: EnricoMi/publish-unit-test-result-action@v2
+#        with:
+#          junit_files: artifacts/**/*.xml
