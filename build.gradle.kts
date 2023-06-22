@@ -6,8 +6,12 @@
  */
 plugins {
   java
+  jacoco
 }
 
+jacoco {
+  toolVersion = "0.8.10"
+}
 repositories {
   mavenCentral()
 }
@@ -17,6 +21,20 @@ dependencies {
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.0")
 }
 
+tasks.withType<JavaCompile>().configureEach {
+  options.encoding = "UTF-8"
+}
+
 tasks.test {
   useJUnitPlatform()
+  testLogging {
+    events("passed", "skipped", "failed")
+    outputs.upToDateWhen { false }
+    showStandardStreams = true
+  }
+  finalizedBy(tasks.jacocoTestReport)
+}
+
+tasks.jacocoTestReport {
+  dependsOn(tasks.test)
 }
