@@ -10,8 +10,20 @@ public class HelloTest {
     assertTrue(true);
   }
 
+//  @Test
+//  public void testFail() {
+//    fail();
+//  }
+
   @Test
-  public void testFail() {
-    fail();
+  public void testAdd() {
+    int result = Hello.add(1, 2);
+    assertTrue(result == 3);
+  }
+
+  @Test
+  public void testAddFail() {
+    int result = Hello.add(1, 2);
+    assertTrue(result == 4);
   }
 }
