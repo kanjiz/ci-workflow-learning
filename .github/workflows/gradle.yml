@@ -50,7 +50,8 @@ jobs:
       - name: Test Summary
         uses: test-summary/action@v2
         with:
-          paths: 'build/test-results/**/TEST-*.xml'
+#          paths: 'build/test-results/**/TEST-*.xml'
+           paths: 'build/reports/checkstyle/main.html'
         if: always()
 
 #      - name: Check Summary
