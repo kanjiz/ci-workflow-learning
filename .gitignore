@@ -28,3 +28,6 @@ gradle-app.setting
 *.iws
 # Ignore Gradle build output directory
 build
+
+# Ignore VSCode build output directory
+bin/
