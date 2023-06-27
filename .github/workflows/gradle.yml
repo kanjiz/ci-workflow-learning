@@ -47,11 +47,11 @@ jobs:
           level: warning
           reviewdog_flags: -name="gradle" -reporter=github-check -filter-mode=nofilter -level=warning
 
-      - name: Test Summary
-        uses: test-summary/action@v2
-        with:
-          paths: 'build/test-results/**/TEST-*.xml'
-        if: always()
+#      - name: Test Summary
+#        uses: test-summary/action@v2
+#        with:
+#          paths: 'build/test-results/**/TEST-*.xml'
+#        if: always()
 
       - name: Check Summary
         uses: test-summary/action@v2
