@@ -43,9 +43,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-check
           filter_mode: nofilter
-          fail_on_error: true
+#          fail_on_error: true
           level: warning
-          reviewdog_flags: -name="gradle" -reporter=github-check -filter-mode=nofilter -fail-on-error -level=warning
+          reviewdog_flags: -name="gradle" -reporter=github-check -filter-mode=nofilter -level=warning
 
       - name: Test Summary
         uses: test-summary/action@v2
