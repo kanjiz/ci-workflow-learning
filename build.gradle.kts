@@ -17,6 +17,13 @@ dependencies {
   testImplementation("com.google.truth:truth:1.1.5")
 }
 
+tasks.withType<Checkstyle>().configureEach {
+  reports {
+    xml.required.set(true)
+    html.required.set(false)
+  }
+}
+
 tasks.withType<JavaCompile>().configureEach {
   options.encoding = "UTF-8"
 }
