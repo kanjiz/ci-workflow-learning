@@ -1,1 +1,2 @@
-# ci-workflow-learning
+# CI の動作確認用リポジトリ
+
