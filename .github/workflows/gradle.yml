@@ -13,6 +13,10 @@ permissions:
   checks: write
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
 
@@ -31,6 +35,18 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
+
+      - name: Setup reviewdog
+        uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-check
+          filter_mode: file
+          fail_on_error: true
+          level: warning
+          reviewdog_flags: -name="gradle" -reporter=github-check -filter-mode=file -fail-on-error -level=warning
+
       - name: Test Summary
         uses: test-summary/action@v2
         with:
@@ -43,8 +59,9 @@ jobs:
 #          junit_files: 'build/test-results/**/TEST-*.xml'
 #        if: always()
 
-      - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v3
-        if: success() || failure() # always run even if the previous step fails
-        with:
-          report_paths: 'build/test-results/**/TEST-*.xml'
+#      - name: Publish Test Report
+#        uses: mikepenz/action-junit-report@v3
+#        if: success() || failure() # always run even if the previous step fails
+#        with:
+#          report_paths: 'build/test-results/**/TEST-*.xml'
+
