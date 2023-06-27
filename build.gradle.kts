@@ -1,5 +1,10 @@
 plugins {
   java
+  checkstyle
+}
+
+checkstyle {
+  toolVersion = "10.12.1"
 }
 
 repositories {
