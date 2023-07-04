@@ -17,8 +17,8 @@ repositories {
 
 dependencies {
   errorprone("com.google.errorprone:error_prone_core:2.20.0")
-  testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.0")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.0")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
   testImplementation("com.google.truth:truth:1.1.5")
 }
 
@@ -31,8 +31,7 @@ tasks.withType<Checkstyle>().configureEach {
 
 tasks.withType<JavaCompile>().configureEach {
   options.encoding = "UTF-8"
-  options.errorprone {
-  }
+  options.errorprone {}
 }
 
 // `test`タスクの設定
