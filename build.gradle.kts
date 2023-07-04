@@ -1,10 +1,13 @@
 import net.ltgt.gradle.errorprone.errorprone
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   java
   checkstyle
   // Google Error Proneを使用するためのプラグイン
   id("net.ltgt.errorprone") version "3.1.0"
+  // Java20に対応させるため、1.8ではなく1.9を指定
+  kotlin("jvm") version "1.9.0-RC"
 }
 
 checkstyle {
@@ -42,4 +45,13 @@ tasks.test {
     // ログに表示するイベントを指定
     events("passed", "skipped", "failed")
   }
+}
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+  jvmTarget = "1.8"
+}
+val compileTestKotlin: KotlinCompile by tasks
+compileTestKotlin.kotlinOptions {
+//  jvmTarget = "1.8"
+//  jvmTarget = "20"
 }
