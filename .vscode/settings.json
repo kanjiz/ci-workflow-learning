@@ -1,3 +1,8 @@
 {
-  "java.configuration.updateBuildConfiguration": "automatic"
+  "editor.formatOnSave": true,
+  "java.checkstyle.configuration": "${workspaceFolder}/config/checkstyle/checkstyle.xml",
+  "java.checkstyle.version": "10.12.1",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.format.settings.profile": "GoogleStyle",
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml"
 }
