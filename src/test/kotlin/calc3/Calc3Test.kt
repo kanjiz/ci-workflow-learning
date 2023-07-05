@@ -5,8 +5,8 @@ import org.junit.jupiter.api.extension.RegisterExtension
 
 class Calc3Test {
 
-  @JvmField
   @RegisterExtension
+  @JvmField
   val outputCaptor = PrintStreamExtension()
 
   @DisplayName("Calc3 クラスの main メソッドのテスト")
@@ -14,6 +14,6 @@ class Calc3Test {
   fun testMain() {
     val expectedOutput: List<String> = listOf("2 + 7 = 9", "2 - 7 = -5")
     Calc3.main(emptyArray())
-    assertThat(outputCaptor.getOutput().trim().split(System.lineSeparator())).isEqualTo(expectedOutput)
+    assertThat(outputCaptor.getOutput().split(System.lineSeparator())).isEqualTo(expectedOutput)
   }
 }

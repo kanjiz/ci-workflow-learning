@@ -5,8 +5,9 @@ import org.junit.jupiter.api.extension.RegisterExtension
 import java.lang.System.lineSeparator
 
 class Calc1Test {
-  @JvmField
+
   @RegisterExtension
+  @JvmField
   val outputCaptor = PrintStreamExtension()
 
   @DisplayName("Calc1 クラスの main メソッドのテスト")
@@ -14,6 +15,6 @@ class Calc1Test {
   fun testMain() {
     val expectedOutput: List<String> = listOf("4", "1", "3")
     Calc1.main(emptyArray())
-    assertThat(outputCaptor.getOutput().trim().split(lineSeparator())).isEqualTo(expectedOutput)
+    assertThat(outputCaptor.getOutput().split(lineSeparator())).isEqualTo(expectedOutput)
   }
 }

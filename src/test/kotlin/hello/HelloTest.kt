@@ -9,8 +9,9 @@ import org.junit.jupiter.api.extension.RegisterExtension
  * <p> このクラスは、{@link Hello}クラスの各メソッドが正しく動作するかをテストします。 </p>
  */
 class HelloTest {
-  @JvmField
+
   @RegisterExtension
+  @JvmField
   val outputCaptor = PrintStreamExtension()
 
   @DisplayName("Hello クラスの main メソッドのテスト")
@@ -18,6 +19,6 @@ class HelloTest {
   fun testMain() {
     val expectedOutput = "Hello!"
     Hello.main(emptyArray())
-    assertThat(outputCaptor.getOutput().trim()).isEqualTo(expectedOutput)
+    assertThat(outputCaptor.getOutput()).isEqualTo(expectedOutput)
   }
 }

@@ -46,6 +46,6 @@ class PrintStreamExtension : BeforeEachCallback, AfterEachCallback {
    * @return ByteArrayOutputStreamにキャプチャされた出力
    */
   fun getOutput(): String {
-    return bytes.toString()
+    return bytes.toString().trim()
   }
 }
