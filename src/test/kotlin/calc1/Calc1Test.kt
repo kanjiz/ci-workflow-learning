@@ -43,7 +43,22 @@ class Calc1Test {
     val bytes: InputStream = ByteArrayInputStream(inputValue.toByteArray())
     System.setIn(bytes)
     Calc4.main(emptyArray())
-    val expectedOutput: List<String> = listOf("整数を入力してください", "2倍すると" + inputValue.toInt() * 2)
+    val expectedOutput: List<String> = listOf(
+      "整数を入力してください",
+      "2倍すると" + inputValue.toInt() * 2)
+    assertThat(outputCaptor.getOutput().split(lineSeparator())).isEqualTo(expectedOutput)
+  }
+
+  @DisplayName("ExeCalc クラスの main メソッドのテスト")
+  @Test
+  fun testExeCalcMain() {
+    ExeCalc.main(emptyArray())
+    val expectedOutput: List<String> = listOf(
+      "127 + 128 = " + (127 + 128),
+      "100 - 68 = " + (100 - 68),
+      "16 * 16 = " + (16 * 16),
+      "10 / 100 = " + (10 / 100),
+      "2005 % 4 = " + (2005 % 4))
     assertThat(outputCaptor.getOutput().split(lineSeparator())).isEqualTo(expectedOutput)
   }
 
@@ -51,7 +66,9 @@ class Calc1Test {
   @Test
   fun testCalc5Main() {
     Calc5.main(emptyArray())
-    val expectedOutput: List<String> = listOf((7 / 4.0).toString(), (7 / 3.0).toString())
+    val expectedOutput: List<String> = listOf(
+      (7 / 4.0).toString(),
+      (7 / 3.0).toString())
     assertThat(outputCaptor.getOutput().split(lineSeparator())).isEqualTo(expectedOutput)
   }
 }
