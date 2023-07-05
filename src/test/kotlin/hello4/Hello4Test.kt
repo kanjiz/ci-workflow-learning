@@ -4,6 +4,7 @@ import java.io.InputStream
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.RegisterExtension
+import java.nio.charset.Charset
 
 class Hello4Test {
   @RegisterExtension
@@ -14,11 +15,11 @@ class Hello4Test {
   @Test
   fun testMain() {
 
-    val input = "John"
-    val bytes: InputStream = ByteArrayInputStream(input.toByteArray())
+    val japaneseName = "田中一郎"
+    val bytes: InputStream = ByteArrayInputStream(japaneseName.toByteArray(Charset.forName(System.getProperty("native.encoding"))))
     System.setIn(bytes)
     Hello4.main(emptyArray())
-    val expected: List<String> = listOf("お名前は?", input + "さん、こんにちは")
+    val expected: List<String> = listOf("お名前は?", japaneseName + "さん、こんにちは")
     assertThat(outputCaptor.getOutput().split(System.lineSeparator())).isEqualTo(expected)
   }
 }
