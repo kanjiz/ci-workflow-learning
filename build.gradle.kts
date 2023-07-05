@@ -19,10 +19,11 @@ repositories {
 }
 
 dependencies {
-  errorprone("com.google.errorprone:error_prone_core:2.20.0")
+  testImplementation("com.google.guava:guava:32.1.1-jre")
   testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
   testImplementation("com.google.truth:truth:1.1.5")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
+  errorprone("com.google.errorprone:error_prone_core:2.20.0")
 }
 
 tasks.withType<Checkstyle>().configureEach {
@@ -48,7 +49,6 @@ tasks.test {
 }
 val compileKotlin: KotlinCompile by tasks
 compileKotlin.kotlinOptions {
-  jvmTarget = "1.8"
 }
 val compileTestKotlin: KotlinCompile by tasks
 compileTestKotlin.kotlinOptions {
