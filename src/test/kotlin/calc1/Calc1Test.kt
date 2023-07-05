@@ -46,4 +46,12 @@ class Calc1Test {
     val expectedOutput: List<String> = listOf("整数を入力してください", "2倍すると" + inputValue.toInt() * 2)
     assertThat(outputCaptor.getOutput().split(lineSeparator())).isEqualTo(expectedOutput)
   }
+
+  @DisplayName("Calc5 クラスの main メソッドのテスト")
+  @Test
+  fun testCalc5Main() {
+    Calc5.main(emptyArray())
+    val expectedOutput: List<String> = listOf((7 / 4.0).toString(), (7 / 3.0).toString())
+    assertThat(outputCaptor.getOutput().split(lineSeparator())).isEqualTo(expectedOutput)
+  }
 }
