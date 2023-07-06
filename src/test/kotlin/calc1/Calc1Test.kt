@@ -20,48 +20,6 @@ class Calc1Test {
     assertThat(outputCaptor.getOutput().split(lineSeparator())).isEqualTo(expectedOutput)
   }
 
-  @DisplayName("Calc2 クラスの main メソッドのテスト")
-  @Test
-  fun testCalc2Main() {
-    val expectedOutput = "10"
-    Calc2.main(emptyArray())
-    assertThat(outputCaptor.getOutput()).isEqualTo(expectedOutput)
-  }
-
-  @DisplayName("Calc3 クラスの main メソッドのテスト")
-  @Test
-  fun testCalc3Main() {
-    val expectedOutput: List<String> = listOf("2 + 7 = 9", "2 - 7 = -5")
-    Calc3.main(emptyArray())
-    assertThat(outputCaptor.getOutput().split(lineSeparator())).isEqualTo(expectedOutput)
-  }
-
-  @DisplayName("Calc4 クラスの main メソッドのテスト")
-  @Test
-  fun testCalc4Main() {
-    val inputValue = "128"
-    val bytes: InputStream = ByteArrayInputStream(inputValue.toByteArray())
-    System.setIn(bytes)
-    Calc4.main(emptyArray())
-    val expectedOutput: List<String> = listOf(
-      "整数を入力してください",
-      "2倍すると" + inputValue.toInt() * 2)
-    assertThat(outputCaptor.getOutput().split(lineSeparator())).isEqualTo(expectedOutput)
-  }
-
-  @DisplayName("ExeCalc クラスの main メソッドのテスト")
-  @Test
-  fun testExeCalcMain() {
-    ExeCalc.main(emptyArray())
-    val expectedOutput: List<String> = listOf(
-      "127 + 128 = " + (127 + 128),
-      "100 - 68 = " + (100 - 68),
-      "16 * 16 = " + (16 * 16),
-      "10 / 100 = " + (10 / 100),
-      "2005 % 4 = " + (2005 % 4))
-    assertThat(outputCaptor.getOutput().split(lineSeparator())).isEqualTo(expectedOutput)
-  }
-
   @DisplayName("Calc5 クラスの main メソッドのテスト")
   @Test
   fun testCalc5Main() {

@@ -1,3 +1,7 @@
+package chapter01
+
+import PrintStreamExtension
+import TestUtils
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -32,8 +36,8 @@ class Chapter01Test {
     @DisplayName("mainメソッドのテスト")
     @Test
     fun testHelloMain() {
-      val expectedOutput = "Hello!"
       Hello.main(emptyArray())
+      val expectedOutput = "Hello!"
       TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
     }
   }
@@ -54,8 +58,8 @@ class Chapter01Test {
     @DisplayName("mainメソッドのテスト")
     @Test
     fun testHelloJavaMain() {
-      val expectedOutput = "Hello Java world!"
       HelloJava.main(emptyArray())
+      val expectedOutput = "Hello Java world!"
       TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
     }
   }
