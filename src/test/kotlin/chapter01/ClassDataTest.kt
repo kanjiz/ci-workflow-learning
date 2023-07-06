@@ -1,13 +1,26 @@
 package chapter01
 
-import TestClassDataManager
+import TestDataManager
+import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 
 class ClassDataTest {
+
   @Test
   fun testCalc1Main() {
-    val testClassDataManager = TestClassDataManager("testClassData.json")
-    val testClassDataList = testClassDataManager.getTestClassDataList()
-    println(testClassDataList)
+    println("testCalc1Main")
+
+
+  }
+
+  companion object {
+    @JvmStatic
+    @BeforeAll
+    fun beforeAll() {
+      println("beforeAll")
+      val testDataManager = TestDataManager("testData.json")
+      val testDataList = testDataManager.getTestDataList()
+      println(testDataList)
+    }
   }
 }

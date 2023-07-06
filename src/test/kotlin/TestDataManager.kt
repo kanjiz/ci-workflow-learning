@@ -1,8 +1,8 @@
 import org.json.JSONObject
 import java.nio.charset.StandardCharsets
 
-class TestClassDataManager(private val fileName: String) {
-  private val testClassDataList = mutableListOf<TestClassData>()
+class TestDataManager(private val fileName: String) {
+  private val testDataMutableList = mutableListOf<TestData>()
 
   init {
     val data = javaClass.classLoader.getResource(fileName)?.readText(StandardCharsets.UTF_8)
@@ -11,7 +11,7 @@ class TestClassDataManager(private val fileName: String) {
     jsonArray.filterIsInstance<JSONObject>()
       .filter { it.getString("chapter") == "1" }
       .map {
-        TestClassData(
+        TestData(
           it.getString("chapter"),
           it.getString("className"),
           it.getString("methodName"),
@@ -19,10 +19,10 @@ class TestClassDataManager(private val fileName: String) {
           it.getJSONArray("expected").joinToString(", ")
         )
       }
-      .toCollection(testClassDataList)
+      .toCollection(testDataMutableList)
   }
 
-  fun getTestClassDataList(): List<TestClassData> {
-    return testClassDataList.toList()
+  fun getTestDataList(): List<TestData> {
+    return testDataMutableList.toList()
   }
 }
