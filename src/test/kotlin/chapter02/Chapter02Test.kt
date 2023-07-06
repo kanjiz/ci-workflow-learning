@@ -2,6 +2,8 @@ package chapter02
 
 import PrintStreamExtension
 import TestUtils
+import com.google.common.truth.Truth.assertThat
+import org.junit.jupiter.api.Assumptions.assumeTrue
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -103,7 +105,8 @@ class Chapter02Test {
     fun testHello4Main() {
 
       val japaneseName = "田中一郎"
-      val bytes: InputStream = ByteArrayInputStream(japaneseName.toByteArray(Charset.forName(System.getProperty("native.encoding"))))
+      val bytes: InputStream =
+        ByteArrayInputStream(japaneseName.toByteArray(Charset.forName(System.getProperty("native.encoding"))))
       System.setIn(bytes)
       Hello4.main(emptyArray())
       val expectedOutput: List<String> = listOf("お名前は?", japaneseName + "さん、こんにちは")
@@ -130,7 +133,8 @@ class Chapter02Test {
       Calc4.main(emptyArray())
       val expectedOutput: List<String> = listOf(
         "整数を入力してください",
-        "2倍すると" + inputValue.toInt() * 2)
+        "2倍すると" + inputValue.toInt() * 2
+      )
       TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
     }
   }
@@ -154,7 +158,8 @@ class Chapter02Test {
         "100 - 68 = " + (100 - 68),
         "16 * 16 = " + (16 * 16),
         "10 / 100 = " + (10 / 100),
-        "2005 % 4 = " + (2005 % 4))
+        "2005 % 4 = " + (2005 % 4)
+      )
       TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
     }
   }
@@ -193,6 +198,120 @@ class Chapter02Test {
     fun testHello3Main() {
       Hello3.main(emptyArray())
       val expectedOutput: List<String> = listOf("こんにちは", "元気ですか？")
+      TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
+    }
+  }
+
+  /**
+   * {@link Calc5}クラスのテストを行います。
+   *
+   * <p>
+   * このクラスは、{@link Calc5}クラスの各メソッドが正しく動作するかをテストします。
+   * </p>
+   */
+  @Nested
+  @DisplayName("Calc5クラス")
+  inner class Calc5Test {
+    @DisplayName("mainメソッドのテスト")
+    @Test
+    fun testCalc5Main() {
+      Calc5.main(emptyArray())
+      val expectedOutput: List<String> = listOf(
+        (7 / 4.0).toString(),
+        (7 / 3.0).toString()
+      )
+      TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
+    }
+  }
+
+  /**
+   * {@link DebugTraining1}クラスのテストを行います。
+   *
+   * <p>
+   * このクラスは、{@link DebugTraining1}クラスの各メソッドが正しく動作するかをテストします。
+   * </p>
+   */
+  @Nested
+  @DisplayName("DebugTraining1クラス")
+  inner class DebugTraining1Test {
+    @DisplayName("mainメソッドのテスト")
+    @Test
+    fun testDebugTraining1Main() {
+      DebugTraining1.main(emptyArray())
+      val expectedOutput: List<String> = listOf(
+        "Hello!",
+        "How you doing?",
+        "Okay thanks.",
+        "How about you?"
+      )
+      TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
+    }
+  }
+
+  /**
+   * {@link DebugTraining2}クラスのテストを行います。
+   *
+   * <p>
+   * このクラスは、{@link DebugTraining2}クラスの各メソッドが正しく動作するかをテストします。
+   * </p>
+   */
+  @Nested
+  @DisplayName("DebugTraining2クラス")
+  inner class DebugTraining2Test {
+    @DisplayName("mainメソッドのテスト")
+    @Test
+    fun testDebugTraining2Main() {
+      DebugTraining2.main(emptyArray())
+      val expectedOutput: List<String> = listOf(
+        "こんにちは",
+        "元気ですか？"
+      )
+      TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
+    }
+  }
+
+  /**
+   * {@link Trapez}クラスのテストを行います。
+   *
+   * <p>
+   * このクラスは、{@link Trapez}クラスの各メソッドが正しく動作するかをテストします。
+   * </p>
+   */
+  @Nested
+  @DisplayName("Trapezクラス")
+  inner class TrapezTest {
+    @DisplayName("mainメソッドのテスト")
+    @Test
+    fun testTrapezMain() {
+      Trapez.main(emptyArray())
+      val expectedOutput = "台形の面積は" + (20 + 15) * 10 / 2 + "です"
+      TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
+    }
+  }
+
+  @Nested
+  @DisplayName("Laboratoryクラス")
+  inner class LaboratoryTest {
+    @DisplayName("mainメソッドのテスト")
+    @Test
+    fun testLaboratoryMain() {
+      val className = "Laboratory"
+
+      try {
+        val clazz = Class.forName(className)
+        val method = clazz.getMethod("main", Array<String>::class.java)
+        method.invoke(null, emptyArray<String>())
+      }
+      catch (e: ClassNotFoundException) {
+        assumeTrue(false, "$className クラスが見つかりません。")
+      }
+
+      val expectedOutput: List<String> = listOf(
+        (-10 + -10).toString(),
+        (-10 * 0).toString(),
+        (0 / (1 * 2)).toString(),
+        (8 % -3).toString()
+      )
       TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
     }
   }
