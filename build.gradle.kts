@@ -7,7 +7,7 @@ plugins {
   // Google Error Proneを使用するためのプラグイン
   id("net.ltgt.errorprone") version "3.1.0"
   // Java20に対応させるため、1.8ではなく1.9を指定
-  kotlin("jvm") version "1.9.0-RC"
+  kotlin("jvm") version "1.9.0"
 }
 
 checkstyle {
