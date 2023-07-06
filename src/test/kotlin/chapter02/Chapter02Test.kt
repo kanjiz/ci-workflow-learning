@@ -2,7 +2,6 @@ package chapter02
 
 import PrintStreamExtension
 import TestUtils
-import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Assumptions.assumeTrue
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
