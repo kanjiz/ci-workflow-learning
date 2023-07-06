@@ -20,6 +20,7 @@ repositories {
 
 dependencies {
   testImplementation("com.google.guava:guava:32.1.1-jre")
+  testImplementation("org.json:json:20230618")
   testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
   testImplementation("com.google.truth:truth:1.1.5")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")

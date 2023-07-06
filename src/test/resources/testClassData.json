@@ -1,0 +1,42 @@
+{
+  "classes": [
+    {
+      "id": 1,
+      "className": "Hello",
+      "methodName": "main",
+      "chapter": "1",
+      "input": [
+        ""
+      ],
+      "expected": [
+        "Hello!"
+      ]
+    },
+    {
+      "id": 2,
+      "className": "HelloJava",
+      "methodName": "main",
+      "chapter": "1",
+      "input": [
+        ""
+      ],
+      "expected": [
+        "Hello Java world!"
+      ]
+    },
+    {
+      "id": 3,
+      "className": "Calc1",
+      "methodName": "main",
+      "chapter": "2",
+      "input": [
+        ""
+      ],
+      "expected": [
+        "4",
+        "1",
+        "3"
+      ]
+    }
+  ]
+}

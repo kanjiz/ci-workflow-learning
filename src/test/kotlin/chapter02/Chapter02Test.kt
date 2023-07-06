@@ -321,4 +321,38 @@ class Chapter02Test {
       TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
     }
   }
+
+/**
+   * {@link Laboratory2}クラスのテストを行います。
+   *
+   * <p>
+   * このクラスは、{@link Laboratory2}クラスの各メソッドが正しく動作するかをテストします。
+   * </p>
+   */
+  @Nested
+  @DisplayName("Laboratory2クラス")
+  inner class Laboratory2Test {
+    @DisplayName("mainメソッドのテスト")
+    @Test
+    fun testLaboratory2Main() {
+      val className = "Laboratory2"
+
+      try {
+        val clazz = Class.forName(className)
+        val method = clazz.getMethod("main", Array<String>::class.java)
+        method.invoke(null, emptyArray<String>())
+      }
+      catch (e: ClassNotFoundException) {
+        assumeTrue(false, "$className クラスが見つかりません。")
+      }
+
+      val expectedOutput: List<String> = listOf(
+        (-10 + -10).toString(),
+        (-10 * 0).toString(),
+        (0 / (1 * 2)).toString(),
+        (8 % -3).toString()
+      )
+      TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
+    }
+  }
 }
