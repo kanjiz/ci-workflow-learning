@@ -3,6 +3,7 @@ package chapter02
 import PrintStreamExtension
 import TestUtils
 import org.junit.jupiter.api.Assumptions.assumeTrue
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -288,6 +289,13 @@ class Chapter02Test {
     }
   }
 
+  /**
+   * {@link Laboratory}クラスのテストを行います。
+   *
+   * <p>
+   * このクラスは、{@link Laboratory}クラスの各メソッドが正しく動作するかをテストします。
+   * </p>
+   */
   @Nested
   @DisplayName("Laboratoryクラス")
   inner class LaboratoryTest {
