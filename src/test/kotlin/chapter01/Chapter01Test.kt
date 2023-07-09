@@ -2,65 +2,43 @@ package chapter01
 
 import PrintStreamExtension
 import TestUtils
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.api.Nested
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.RegisterExtension
+import io.kotest.core.spec.style.FunSpec
+import io.kotest.matchers.shouldBe
+import java.io.ByteArrayOutputStream
+import java.io.PrintStream
 
-/**
- * テキストの第一章に記載された各クラスのテストを行います。
- *
- * <p>
- * このクラスは、テキストの第一章に記載された各クラスの各メソッドが正しく動作するかをテストします。
- * </p>
- */
-@DisplayName("第一章")
-class Chapter01Test {
-  @RegisterExtension
-  @JvmField
-  val outputCaptor = PrintStreamExtension()
+class Chapter01Test : FunSpec({
+  context("第一章") {
+    val outputCaptor = PrintStreamExtension()
+    val bytes = ByteArrayOutputStream()
+    val out = System.out
+    beforeEach {
+      println("beforeEach")
+      System.setOut(PrintStream(bytes))
+    }
 
-  /**
-   * {@link Hello}クラスのテストを行います。
-   *
-   * <p> このクラスは、{@link Hello}クラスの各メソッドが正しく動作するかをテストします。 </p>
-   */
-  @Nested
-  @DisplayName("Helloクラス")
-  inner class HelloTest {
-    /**
-     * {@link Hello#main}メソッドのテストを行います。
-     *
-     * <p> このメソッドは、{@link Hello}クラスのmainメソッドが正しく動作するかをテストします。 </p>
-     */
-    @DisplayName("mainメソッドのテスト")
-    @Test
-    fun testHelloMain() {
+    afterEach {
+      System.setOut(out)
+      bytes.reset()
+      println("afterEach")
+    }
+
+    test("Helloクラスのmainメソッドのテスト") {
       Hello.main(emptyArray())
       val expectedOutput = "Hello!"
-      TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
+//    TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
+
+      TestUtils.assertOutput(bytes.toString().trim(), expectedOutput)
+//    bytes.toString().trim() shouldBe expectedOutput
+    }
+
+    test("HelloJavaクラスのmainメソッドのテスト") {
+      HelloJava.main(emptyArray())
+      val expectedOutput = "Hello Java world"
+//    TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
+    TestUtils.assertOutput(bytes.toString().trim(), expectedOutput)
+//      bytes.toString().trim() shouldBe expectedOutput
     }
   }
 
-  /**
-   * {@link HelloJava}クラスのテストを行います。
-   *
-   * <p> このクラスは、{@link HelloJava}クラスの各メソッドが正しく動作するかをテストします。 </p>
-   */
-  @Nested
-  @DisplayName("HelloJavaクラス")
-  inner class HelloJavaTest {
-    /**
-     * {@link HelloJava#main}メソッドのテストを行います。
-     *
-     * <p> このメソッドは、{@link HelloJava}クラスのmainメソッドが正しく動作するかをテストします。 </p>
-     */
-    @DisplayName("mainメソッドのテスト")
-    @Test
-    fun testHelloJavaMain() {
-      HelloJava.main(emptyArray())
-      val expectedOutput = "Hello Java world!"
-      TestUtils.assertOutput(outputCaptor.getOutput(), expectedOutput)
-    }
-  }
-}
+})

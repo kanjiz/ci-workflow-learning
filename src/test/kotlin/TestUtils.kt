@@ -1,13 +1,16 @@
-import com.google.common.truth.Truth.assertWithMessage
+import io.kotest.assertions.asClue
+import io.kotest.assertions.withClue
+import io.kotest.matchers.should
+import io.kotest.matchers.shouldBe
 
 object TestUtils {
   fun assertOutput(actual: String, expected: String) {
     val callerMethodName = Throwable().stackTrace[1].methodName
-    assertWithMessage(callerMethodName).that(actual).isEqualTo(expected)
+    actual shouldBe expected
   }
 
   fun assertOutput(actual: String, expected: List<String>) {
     val callerMethodName = Throwable().stackTrace[1].methodName
-    assertWithMessage(callerMethodName).that(actual.split(System.lineSeparator())).isEqualTo(expected)
+    withClue(callerMethodName) { actual.split(System.lineSeparator()) shouldBe expected }
   }
 }

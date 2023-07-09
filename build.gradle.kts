@@ -22,6 +22,9 @@ dependencies {
   testImplementation("com.google.guava:guava:32.1.1-jre")
   testImplementation("org.json:json:20230618")
   testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
+  testImplementation("io.kotest:kotest-runner-junit5:5.6.2")
+  testImplementation("io.kotest:kotest-assertions-core:5.6.2")
+  testImplementation("io.kotest:kotest-property:5.6.2")
   testImplementation("com.google.truth:truth:1.1.5")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
   errorprone("com.google.errorprone:error_prone_core:2.20.0")
@@ -39,15 +42,20 @@ tasks.withType<JavaCompile>().configureEach {
   options.errorprone {}
 }
 
-// `test`タスクの設定
-tasks.test {
-  // JUnit 5を使用するように設定
+tasks.withType<Test>().configureEach {
   useJUnitPlatform()
   testLogging {
-    // ログに表示するイベントを指定
     events("passed", "skipped", "failed")
+
+    options {
+      showCauses = false
+      showExceptions = false
+      showStackTraces = false
+      showStandardStreams = false
+    }
   }
 }
+
 val compileKotlin: KotlinCompile by tasks
 compileKotlin.kotlinOptions {
 }
