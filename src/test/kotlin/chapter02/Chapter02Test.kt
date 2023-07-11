@@ -17,8 +17,15 @@ class Chapter02Test : FunSpec({
     val fileName = "chapter02.json"
     val testDataList = TestDataManager(fileName).getTestDataList()
     testDataList.forEach {
-      test("${it.className} ${it.methodName}") {
-        val didMethodExecute = MethodExecutor.executeMethod(it.className, it.methodName)
+
+      val testLabel = if (it.input.isEmpty()) {
+        "${it.className} ${it.methodName}"
+      } else {
+        "${it.className} ${it.methodName} 入力: ${it.input}"
+      }
+
+      test(testLabel) {
+        val didMethodExecute = MethodExecutor.executeMethod(it)
         if (!didMethodExecute) {
           fail("Method not found: ${it.className} ${it.methodName}")
         }

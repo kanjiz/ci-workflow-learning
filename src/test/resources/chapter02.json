@@ -38,6 +38,32 @@
         "2 + 7 = 9",
         "2 - 7 = -5"
       ]
+    },
+    {
+      "id": 4,
+      "className": "Hello4",
+      "methodName": "main",
+      "chapter": "2",
+      "input": [
+        "John Smith"
+      ],
+      "expected": [
+        "お名前は?",
+        "John Smithさん、こんにちは"
+      ]
+    },
+    {
+      "id": 5,
+      "className": "Hello4",
+      "methodName": "main",
+      "chapter": "2",
+      "input": [
+        "田中一郎"
+      ],
+      "expected": [
+        "お名前は?",
+        "田中一郎さん、こんにちは"
+      ]
     }
   ]
 }
