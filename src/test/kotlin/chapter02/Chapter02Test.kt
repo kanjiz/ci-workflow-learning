@@ -5,6 +5,9 @@ import TestDataManager
 import io.kotest.assertions.fail
 import io.kotest.core.spec.style.FunSpec
 
+/**
+ * 第2章のテストを行うためのクラスです。
+ */
 class Chapter02Test : FunSpec({
 
   context("第二章") {
