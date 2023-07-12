@@ -19,7 +19,7 @@ class Chapter02Test : FunSpec({
     val testDataList = TestDataManager(fileName).getTestDataList()
     testDataList.forEach {
 
-      val testLabel = TestLabelGenerator.generateLabel(it);
+      val testLabel = TestLabelGenerator.generateLabel(it)
       test(testLabel) {
         val didMethodExecute = MethodExecutor.executeMethod(it)
         if (!didMethodExecute) {
