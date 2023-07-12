@@ -2,6 +2,7 @@ package chapter02
 
 import PrintStreamExtension
 import TestDataManager
+import TestLabelGenerator
 import io.kotest.assertions.fail
 import io.kotest.core.spec.style.FunSpec
 
@@ -18,12 +19,7 @@ class Chapter02Test : FunSpec({
     val testDataList = TestDataManager(fileName).getTestDataList()
     testDataList.forEach {
 
-      val testLabel = if (it.input.isEmpty()) {
-        "${it.className} ${it.methodName}"
-      } else {
-        "${it.className} ${it.methodName} 入力: ${it.input}"
-      }
-
+      val testLabel = TestLabelGenerator.generateLabel(it);
       test(testLabel) {
         val didMethodExecute = MethodExecutor.executeMethod(it)
         if (!didMethodExecute) {

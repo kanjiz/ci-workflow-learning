@@ -64,6 +64,130 @@
         "お名前は?",
         "田中一郎さん、こんにちは"
       ]
+    },
+    {
+      "id": 6,
+      "className": "Calc4",
+      "methodName": "main",
+      "chapter": "2",
+      "input": [
+        "128"
+      ],
+      "expected": [
+        "整数を入力してください",
+        "2倍すると256"
+      ]
+    },
+    {
+      "id": 7,
+      "className": "ExeCalc",
+      "methodName": "main",
+      "chapter": "2",
+      "input": [
+        ""
+      ],
+      "expected": [
+        "127 + 128 = 255",
+        "100 - 68 = 32",
+        "16 * 16 = 256",
+        "10 / 100 = 0",
+        "2005 % 4 = 1"
+      ]
+    },
+    {
+      "id": 8,
+      "className": "Hello2",
+      "methodName": "main",
+      "chapter": "2",
+      "input": [
+        ""
+      ],
+      "expected": [
+        "Hello!",
+        "How you doing?"
+      ]
+    },
+    {
+      "id": 9,
+      "className": "Hello3",
+      "methodName": "main",
+      "chapter": "2",
+      "input": [
+        ""
+      ],
+      "expected": [
+        "こんにちは",
+        "元気ですか？"
+      ]
+    },
+    {
+      "id": 10,
+      "className": "Calc5",
+      "methodName": "main",
+      "chapter": "2",
+      "input": [
+        ""
+      ],
+      "expected": [
+        "1.75",
+        "2.3333333333333335"
+      ]
+    },
+    {
+      "id": 11,
+      "className": "DebugTraining1",
+      "methodName": "main",
+      "chapter": "2",
+      "input": [
+        ""
+      ],
+      "expected": [
+        "Hello!",
+        "How you doing?",
+        "Okay thanks.",
+        "How about you?"
+
+      ]
+    },
+    {
+      "id": 12,
+      "className": "DebugTraining2",
+      "methodName": "main",
+      "chapter": "2",
+      "input": [
+        ""
+      ],
+      "expected": [
+        "こんにちは",
+        "元気ですか？"
+      ]
+    },
+    {
+      "id": 13,
+      "className": "Trapez",
+      "methodName": "main",
+      "chapter": "2",
+      "input": [
+        ""
+      ],
+      "expected": [
+        "台形の面積は175です"
+      ]
+    },
+    {
+      "id": 14,
+      "className": "Laboratory",
+      "methodName": "main",
+      "chapter": "2",
+      "input": [
+        ""
+      ],
+      "expected": [
+        "-200",
+        "0",
+        "0",
+        "2"
+      ]
     }
   ]
 }
