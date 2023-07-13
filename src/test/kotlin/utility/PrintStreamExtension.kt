@@ -16,16 +16,6 @@ import java.io.PrintStream
  *
  * また、このクラスは、キャプチャされた出力を取得するための `getOutput()` メソッドを提供しています。
  *
- * このクラスを使用する場合、`extension` メソッドを呼び出す必要があります。
- * 例えば、以下のように呼び出します。
- *
- * 例:
- * ```
- * class Chapter01Test : FunSpec({
- *  context("第一章") {
- *  val outputCaptor = utility.PrintStreamExtension()
- *  extension(outputCaptor)
- *  ...
  */
 @AutoScan
 object PrintStreamExtension : BeforeEachListener, AfterEachListener {
