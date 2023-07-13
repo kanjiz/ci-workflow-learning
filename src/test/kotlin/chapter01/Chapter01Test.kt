@@ -8,7 +8,11 @@ import io.kotest.assertions.fail
 import io.kotest.core.spec.style.FunSpec
 
 /**
- * 第1章のテストを行うためのクラスです。
+ * テキストの第一章に記載された各クラスのテストを行います。
+ *
+ * <p>
+ * このクラスは、テキストの第一章に記載された各クラスの各メソッドが正しく動作するかをテストします。
+ * </p>
  */
 class Chapter01Test : FunSpec({
   context("第一章") {

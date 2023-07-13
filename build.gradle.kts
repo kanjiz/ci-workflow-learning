@@ -10,6 +10,12 @@ plugins {
   kotlin("jvm") version "1.9.0"
 }
 
+java {
+  toolchain {
+    languageVersion.set(JavaLanguageVersion.of(19))
+  }
+}
+
 checkstyle {
   toolVersion = "10.12.1"
 }
@@ -61,5 +67,5 @@ compileKotlin.kotlinOptions {
 }
 val compileTestKotlin: KotlinCompile by tasks
 compileTestKotlin.kotlinOptions {
-//  jvmTarget = "20"
+  jvmTarget = "19"
 }
