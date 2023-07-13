@@ -1,0 +1,23 @@
+{
+  "classes": [
+    {
+      "name": "com.example.MyClass",
+      "methods": [
+        {
+          "name": "myMethod",
+          "returnType": "void",
+          "parameters": [
+            {
+              "name": "param1",
+              "type": "java.lang.String"
+            },
+            {
+              "name": "param2",
+              "type": "int"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
