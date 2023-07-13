@@ -1,5 +1,8 @@
+package utility
+
 import io.kotest.core.listeners.AfterEachListener
 import io.kotest.core.listeners.BeforeEachListener
+import io.kotest.core.spec.AutoScan
 import io.kotest.core.test.TestCase
 import io.kotest.core.test.TestResult
 import java.io.ByteArrayOutputStream
@@ -20,11 +23,12 @@ import java.io.PrintStream
  * ```
  * class Chapter01Test : FunSpec({
  *  context("第一章") {
- *  val outputCaptor = PrintStreamExtension()
+ *  val outputCaptor = utility.PrintStreamExtension()
  *  extension(outputCaptor)
  *  ...
  */
-class PrintStreamExtension() : BeforeEachListener, AfterEachListener {
+@AutoScan
+object PrintStreamExtension : BeforeEachListener, AfterEachListener {
 
   /**
    * System.outの初期値を保持する変数です。

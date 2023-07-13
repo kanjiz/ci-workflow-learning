@@ -1,6 +1,6 @@
 package chapter02
 
-import PrintStreamExtension
+import utility.PrintStreamExtension
 import io.kotest.assertions.fail
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
@@ -10,7 +10,7 @@ import io.kotest.matchers.shouldBe
  */
 class NameDisp1Test : FunSpec({
   context("第二章") {
-    val outputCaptor = PrintStreamExtension()
+    val outputCaptor = PrintStreamExtension
     extension(outputCaptor)
 
     /*

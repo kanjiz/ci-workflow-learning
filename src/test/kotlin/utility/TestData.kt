@@ -1,3 +1,5 @@
+package utility
+
 /**
  * Data class for storing test data
  * @param chapter chapter number

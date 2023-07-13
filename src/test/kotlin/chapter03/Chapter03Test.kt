@@ -1,19 +1,13 @@
-package chapter01
+package chapter03
 
-import io.kotest.core.spec.style.FunSpec
 import utility.TestDataManager
 import utility.TestLabelGenerator
 import utility.UnitTestRunner
+import io.kotest.core.spec.style.FunSpec
 
-/**
- * 第一章のテストを実行するためのクラスです。
- */
-class Chapter01Test : FunSpec({
-  
-  /**
-   * 第一章のテストをグループ化しています。
-   */
-  context("第一章") {
+class Chapter03Test : FunSpec({
+
+  context("第三章") {
     val unitTestRunner = UnitTestRunner()
     val testDataManager = TestDataManager("chapter01.json")
     val testDataList = testDataManager.getTestDataList()

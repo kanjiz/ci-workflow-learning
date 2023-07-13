@@ -6,19 +6,27 @@ plugins {
   checkstyle
   // Google Error Proneを使用するためのプラグイン
   id("net.ltgt.errorprone") version "3.1.0"
-  // Java20に対応させるため、1.8ではなく1.9を指定
   kotlin("jvm") version "1.9.0"
+//  id("io.gitlab.arturbosch.detekt").version("1.23.0")
+
 }
+
+// detektがJava20に対応していないため、Java19を指定
+val javaVersion = 19
 
 java {
   toolchain {
-    languageVersion.set(JavaLanguageVersion.of(19))
+    languageVersion.set(JavaLanguageVersion.of(javaVersion))
   }
 }
 
 checkstyle {
   toolVersion = "10.12.1"
 }
+
+//detekt {
+//  buildUponDefaultConfig = true
+//}
 
 repositories {
   mavenCentral()
@@ -67,5 +75,5 @@ compileKotlin.kotlinOptions {
 }
 val compileTestKotlin: KotlinCompile by tasks
 compileTestKotlin.kotlinOptions {
-  jvmTarget = "19"
+  jvmTarget = javaVersion.toString()
 }
