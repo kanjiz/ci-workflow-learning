@@ -1,20 +1,37 @@
 {
   "classes": [
     {
-      "name": "com.example.MyClass",
+      "className": "Variable1",
       "methods": [
         {
-          "name": "myMethod",
+          "methodName": "main",
           "returnType": "void",
           "parameters": [
             {
-              "name": "param1",
-              "type": "java.lang.String"
-            },
-            {
-              "name": "param2",
-              "type": "int"
+              "name": "args",
+              "type": "String"
             }
+          ],
+          "expected": [
+            "5"
+          ]
+        }
+      ]
+    },
+    {
+      "className": "VariableExe",
+      "methods": [
+        {
+          "methodName": "main",
+          "returnType": "void",
+          "parameters": [
+            {
+              "name": "args",
+              "type": "String"
+            }
+          ],
+          "expected": [
+            "10"
           ]
         }
       ]

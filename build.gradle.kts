@@ -40,6 +40,7 @@ dependencies {
   testImplementation("io.kotest:kotest-assertions-core:5.6.2")
   testImplementation("io.kotest:kotest-property:5.6.2")
   testImplementation("com.google.truth:truth:1.1.5")
+  testImplementation("com.google.code.gson:gson:2.10.1")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
   errorprone("com.google.errorprone:error_prone_core:2.20.0")
 }
