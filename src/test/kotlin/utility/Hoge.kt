@@ -43,12 +43,11 @@ class Hoge : FunSpec({
 
   }
 
-  classDataList.forEach {
-    println(it)
+  classDataList.forEachIndexed { index, classData ->
+    println("Class $index: $classData")
   }
 
   test("hoge") {
     println("hoge")
   }
-
 })
