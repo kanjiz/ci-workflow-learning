@@ -3,9 +3,7 @@
     {
       "className": "Hello",
       "methodName": "main",
-      "input": [
-        ""
-      ],
+      "input": [],
       "expected": [
         "Hello!"
       ]
@@ -13,9 +11,7 @@
     {
       "className": "HelloJava",
       "methodName": "main",
-      "input": [
-        ""
-      ],
+      "input": [],
       "expected": [
         "Hello Java world!"
       ]

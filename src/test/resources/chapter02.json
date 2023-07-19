@@ -1,10 +1,8 @@
 {
   "classes": [
     {
-      "id": 1,
       "className": "Calc1",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         ""
       ],
@@ -15,10 +13,8 @@
       ]
     },
     {
-      "id": 2,
       "className": "Calc2",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         ""
       ],
@@ -27,10 +23,8 @@
       ]
     },
     {
-      "id": 3,
       "className": "Calc3",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         ""
       ],
@@ -40,10 +34,8 @@
       ]
     },
     {
-      "id": 4,
       "className": "Hello4",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         "John Smith"
       ],
@@ -53,10 +45,8 @@
       ]
     },
     {
-      "id": 5,
       "className": "Hello4",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         "田中一郎"
       ],
@@ -66,10 +56,8 @@
       ]
     },
     {
-      "id": 6,
       "className": "Calc4",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         "128"
       ],
@@ -79,10 +67,8 @@
       ]
     },
     {
-      "id": 7,
       "className": "ExeCalc",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         ""
       ],
@@ -95,10 +81,8 @@
       ]
     },
     {
-      "id": 8,
       "className": "Hello2",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         ""
       ],
@@ -108,10 +92,8 @@
       ]
     },
     {
-      "id": 9,
       "className": "Hello3",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         ""
       ],
@@ -121,10 +103,8 @@
       ]
     },
     {
-      "id": 10,
       "className": "Calc5",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         ""
       ],
@@ -134,10 +114,8 @@
       ]
     },
     {
-      "id": 11,
       "className": "DebugTraining1",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         ""
       ],
@@ -146,14 +124,11 @@
         "How you doing?",
         "Okay thanks.",
         "How about you?"
-
       ]
     },
     {
-      "id": 12,
       "className": "DebugTraining2",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         ""
       ],
@@ -163,10 +138,8 @@
       ]
     },
     {
-      "id": 13,
       "className": "Trapez",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         ""
       ],
@@ -175,10 +148,8 @@
       ]
     },
     {
-      "id": 14,
       "className": "Laboratory",
       "methodName": "main",
-      "chapter": "2",
       "input": [
         ""
       ],

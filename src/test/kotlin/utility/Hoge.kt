@@ -23,18 +23,18 @@ class Hoge : FunSpec({
     jsonObject.getJSONArray("methods").forEach {
       val methodJsonObject = it as JSONObject
       val methodName = methodJsonObject.getString("methodName")
-      val returnType = methodJsonObject.getString("returnType")
+      val returnType = getReturnTypeFromJsonOrDefault(methodJsonObject)
       val parameters = mutableListOf<ParameterData>()
 
       methodJsonObject.getJSONArray("parameters").forEach {
         val parameterJsonObject = it as JSONObject
         val name = parameterJsonObject.getString("name")
         val type = parameterJsonObject.getString("type")
-        
-        parameters.add(ParameterData.Builder().name(name).type(type).build())
+
+        parameters.add(ParameterData.builder().name(name).type(type).build())
       }
 
-      val expected = methodJsonObject.getJSONArray("expected").map { it.toString() }
+      val expected = methodJsonObject.getJSONArray("expected").map(Any::toString)
 
       methods.add(MethodData(methodName, returnType, parameters, expected))
     }
@@ -51,3 +51,23 @@ class Hoge : FunSpec({
     println("hoge")
   }
 })
+
+/**
+ * メソッドの戻り値の型を取得する。
+ *
+ * @param methodJsonObject メソッドのJSONオブジェクト
+ * @return メソッドの戻り値の型
+ *
+ */
+private fun getReturnTypeFromJsonOrDefault(methodJsonObject: JSONObject): String {
+  // returnTypeキーが存在しない場合は、既定値を設定する。
+  // returnTypeキーの値が空文字の場合は、既定値を設定する。e.g. "returnType": ""
+  // returnTypeキーの値が空白文字の場合は、既定値を設定する。e.g. "returnType": " "
+  return if (methodJsonObject.isNull("returnType") || methodJsonObject.getString("returnType")
+      .isEmpty() || methodJsonObject.getString("returnType").isBlank()
+  ) {
+    "void" // 既定値を設定
+  } else {
+    methodJsonObject.getString("returnType")
+  }
+}

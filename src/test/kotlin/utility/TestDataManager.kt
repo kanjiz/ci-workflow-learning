@@ -20,8 +20,8 @@ class TestDataManager(private val fileName: String) {
         TestData(
           it.getString("className"),
           it.getString("methodName"),
-          it.getJSONArray("input").map { it.toString() }.toList(),
-          it.getJSONArray("expected").map { it.toString() }.toList()
+          it.getJSONArray("input").map(Any::toString).toList(),
+          it.getJSONArray("expected").map(Any::toString).toList()
         )
       }
       .toCollection(testDataMutableList)

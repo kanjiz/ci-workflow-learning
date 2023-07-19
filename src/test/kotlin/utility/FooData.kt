@@ -9,11 +9,11 @@ import kotlinx.serialization.Serializable
  * @property type パラメータの型
  */
 @Serializable
-data class ParameterData(val name: String, val type: String) {
+data class FooData(val name: String, val type: String) {
   init {
     require(name.isNotBlank()) { "Parameter name is blank." }
     require(type.isNotBlank()) { "Parameter type is blank." }
-    require(type in listOf("String", "String[]", "Int", "Double", "Boolean")) { "Parameter type is invalid." }
+    require(type in listOf("String", "Int", "Double", "Boolean")) { "Parameter type is invalid." }
   }
 
   override fun toString(): String {

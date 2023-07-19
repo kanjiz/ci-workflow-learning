@@ -7,6 +7,7 @@ plugins {
   // Google Error Proneを使用するためのプラグイン
   id("net.ltgt.errorprone") version "3.1.0"
   kotlin("jvm") version "1.9.0"
+  kotlin("plugin.serialization") version "1.9.0"
 //  id("io.gitlab.arturbosch.detekt").version("1.23.0")
 
 }
@@ -35,6 +36,7 @@ repositories {
 dependencies {
   testImplementation("com.google.guava:guava:32.1.1-jre")
   testImplementation("org.json:json:20230618")
+  testImplementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
   testImplementation("io.kotest:kotest-runner-junit5:5.6.2")
   testImplementation("io.kotest:kotest-assertions-core:5.6.2")
   testImplementation("io.kotest:kotest-property:5.6.2")

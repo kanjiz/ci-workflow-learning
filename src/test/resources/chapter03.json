@@ -9,7 +9,7 @@
           "parameters": [
             {
               "name": "args",
-              "type": "String"
+              "type": "String[]"
             }
           ],
           "expected": [
@@ -27,7 +27,7 @@
           "parameters": [
             {
               "name": "args",
-              "type": "String"
+              "type": "String[]"
             }
           ],
           "expected": [

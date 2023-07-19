@@ -17,9 +17,7 @@ object MethodExecutor {
           ByteArrayInputStream(it.toByteArray(nativeEncoding))
         System.setIn(bytes)
       }
-//      val bytes: InputStream =
-//        ByteArrayInputStream(testData.input.toByteArray(Charset.forName(System.getProperty("native.encoding"))))
-//      System.setIn(bytes)
+
       method.invoke(null, emptyArray<String>())
 
       true
