@@ -4,7 +4,6 @@ import org.json.JSONObject
 import java.nio.charset.StandardCharsets
 
 class TestDataManager(private val fileName: String) {
-  private val delimiter = ","
   private val testDataMutableList = mutableListOf<TestData>()
 
   init {
@@ -17,15 +16,12 @@ class TestDataManager(private val fileName: String) {
     val jsonArray = JSONObject(data).getJSONArray("classes")
 
     jsonArray.filterIsInstance<JSONObject>()
-
-//      .filter { it.getString("chapter") == "1" }
       .map {
         TestData(
-          it.getString("chapter"),
           it.getString("className"),
           it.getString("methodName"),
-          it.getJSONArray("input").joinToString(delimiter),
-          it.getJSONArray("expected").joinToString(delimiter)
+          it.getJSONArray("input").map { it.toString() }.toList(),
+          it.getJSONArray("expected").map { it.toString() }.toList()
         )
       }
       .toCollection(testDataMutableList)

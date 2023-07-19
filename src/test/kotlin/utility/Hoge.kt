@@ -15,8 +15,8 @@ class Hoge : FunSpec({
 
   println(jsonArray)
 
-  jsonArray.filterIsInstance<JSONObject>().forEach {
-    val jsonObject = it
+  jsonArray.forEach {
+    val jsonObject = it as JSONObject
     val className = jsonObject.getString("className")
     val methods = mutableListOf<MethodData>()
 
@@ -30,8 +30,8 @@ class Hoge : FunSpec({
         val parameterJsonObject = it as JSONObject
         val name = parameterJsonObject.getString("name")
         val type = parameterJsonObject.getString("type")
-
-        parameters.add(ParameterData(name, type))
+        
+        parameters.add(ParameterData.Builder().name(name).type(type).build())
       }
 
       val expected = methodJsonObject.getJSONArray("expected").map { it.toString() }

@@ -11,8 +11,9 @@ object TestLabelGenerator {
    * @return 生成されたテストラベル
    */
   fun generateLabel(testData: TestData): String {
+    println(testData.input.size)
     // 入力値が空の場合は、クラス名とメソッド名だけを使用してラベルを生成します。
-    return if (testData.input.isEmpty()) {
+    return if (testData.input.isNullOrEmpty() || testData.input.all { it.isBlank() }) {
       generateLabel(testData.className, testData.methodName)
     } else {
       // 入力値がある場合は、クラス名、メソッド名、入力値を使用してラベルを生成します。
@@ -41,6 +42,11 @@ object TestLabelGenerator {
    * @return 生成されたテストラベル
    */
   fun generateLabel(className: String, methodName: String, input: String): String {
+    // 入力値がある場合は、クラス名、メソッド名、入力値を使用してラベルを生成します。
+    return "$className $methodName 入力: $input"
+  }
+
+  fun generateLabel(className: String, methodName: String, input: List<String>): String {
     // 入力値がある場合は、クラス名、メソッド名、入力値を使用してラベルを生成します。
     return "$className $methodName 入力: $input"
   }

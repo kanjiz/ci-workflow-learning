@@ -2,7 +2,6 @@ package utility
 
 /**
  * Data class for storing test data
- * @param chapter chapter number
  * @param className class name
  * @param methodName method name
  * @param input input data
@@ -10,10 +9,14 @@ package utility
  * @param isValid whether the test data is valid
  */
 data class TestData(
-  val chapter: String,
   val className: String,
   val methodName: String,
-  val input: String,
-  val expected: String,
+  val input: List<String>,
+  val expected: List<String>,
   val isValid: Boolean = true
-)
+) {
+
+  override fun toString(): String {
+    return " Class: $className, Method: $methodName, Input: $input, Expected: $expected"
+  }
+}

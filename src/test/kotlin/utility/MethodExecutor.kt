@@ -11,7 +11,7 @@ object MethodExecutor {
     return try {
       val clazz = Class.forName(testData.className)
       val method = clazz.getMethod(testData.methodName, Array<String>::class.java)
-      val inputList = testData.input.split(",")
+      val inputList = testData.input
       inputList.forEach {
         val bytes: InputStream =
           ByteArrayInputStream(it.toByteArray(nativeEncoding))
