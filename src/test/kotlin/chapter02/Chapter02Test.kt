@@ -1,6 +1,7 @@
 package chapter02
 
 import io.kotest.core.spec.style.FunSpec
+import utility.SimpleTestData
 import utility.TestDataManager
 import utility.TestLabelGenerator
 import utility.UnitTestRunner
@@ -13,16 +14,18 @@ import utility.UnitTestRunner
  * </p>
  */
 class Chapter02Test : FunSpec({
+  val chapter = TextbookChapter.CHAPTER_2
 
-  context("第二章") {
+  context(chapter.chapterTitle) {
     val unitTestRunner = UnitTestRunner()
-    val testDataManager = TestDataManager("chapter02.json")
+    val testDataManager = TestDataManager(chapter.testDataFileName)
     val testDataList = testDataManager.getTestDataList()
 
     testDataList.forEach {
-      val testLabel = TestLabelGenerator.generateLabel(it)
+      val simpleTestData = it as SimpleTestData
+      val testLabel = TestLabelGenerator.generateLabel(simpleTestData)
       test(testLabel) {
-        unitTestRunner.runTest(it)
+        unitTestRunner.runTest(simpleTestData)
       }
     }
   }

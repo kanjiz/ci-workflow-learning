@@ -1,40 +1,38 @@
-{
-  "classes": [
-    {
-      "className": "Variable1",
-      "methods": [
-        {
-          "methodName": "main",
-          "returnType": "void",
-          "parameters": [
-            {
-              "name": "args",
-              "type": "String[]"
-            }
-          ],
-          "expected": [
-            "5"
-          ]
-        }
-      ]
-    },
-    {
-      "className": "VariableExe",
-      "methods": [
-        {
-          "methodName": "main",
-          "returnType": "void",
-          "parameters": [
-            {
-              "name": "args",
-              "type": "String[]"
-            }
-          ],
-          "expected": [
-            "10"
-          ]
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "className": "Variable1",
+    "methods": [
+      {
+        "methodName": "main",
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "args",
+            "type": "String[]"
+          }
+        ],
+        "expected": [
+          "5"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "VariableExe",
+    "methods": [
+      {
+        "methodName": "main",
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "args",
+            "type": "String[]"
+          }
+        ],
+        "expected": [
+          "10"
+        ]
+      }
+    ]
+  }
+]

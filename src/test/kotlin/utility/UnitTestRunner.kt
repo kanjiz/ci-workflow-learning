@@ -15,16 +15,16 @@ class UnitTestRunner : FunSpec() {
   /**
    * テストデータを受け取り、テストを実行して出力を検証します。
    *
-   * @param testData テストデータ
+   * @param simpleTestData テストデータ
    */
-  fun runTest(testData: TestData) {
+  fun runTest(simpleTestData: SimpleTestData) {
     val nativeEncoding: Charset = Charset.forName(System.getProperty("native.encoding"))
     try {
       // テスト対象のクラスとメソッドを取得する
-      val clazz = Class.forName(testData.className)
-      val method = clazz.getMethod(testData.methodName, Array<String>::class.java)
+      val clazz = Class.forName(simpleTestData.className)
+      val method = clazz.getMethod(simpleTestData.methodName, Array<String>::class.java)
 
-      val inputList = testData.input
+      val inputList = simpleTestData.input
       inputList.forEach {
         val bytes: InputStream =
           ByteArrayInputStream(it.toByteArray(nativeEncoding))
@@ -34,13 +34,40 @@ class UnitTestRunner : FunSpec() {
       method.invoke(null, emptyArray<String>())
     } catch (e: ClassNotFoundException) {
       // クラスが見つからない場合は、エラーメッセージを表示する
-      fail("Class not found: ${testData.className} ${testData.methodName}")
+      fail("Class not found: ${simpleTestData.className} ${simpleTestData.methodName}")
     } catch (e: NoSuchMethodException) {
       // メソッドが見つからない場合は、エラーメッセージを表示する
-      fail("Method not found: ${testData.className} ${testData.methodName}")
+      fail("Method not found: ${simpleTestData.className} ${simpleTestData.methodName}")
     }
 
     // 出力を検証する
-    TestUtils.assertOutput(PrintStreamExtension.getOutput(), testData.expected)
+    TestUtils.assertOutput(PrintStreamExtension.getOutput(), simpleTestData.expected)
+  }
+
+  fun runTest(className: String, method: MethodData) {
+    val nativeEncoding: Charset = Charset.forName(System.getProperty("native.encoding"))
+    try {
+      // テスト対象のクラスとメソッドを取得する
+      val clazz = Class.forName(className)
+      val method = clazz.getMethod(method.methodName, Array<String>::class.java)
+
+//      val inputList = method.input
+//      inputList.forEach {
+//        val bytes: InputStream =
+//          ByteArrayInputStream(it.toByteArray(nativeEncoding))
+//        System.setIn(bytes)
+//      }
+      // テスト対象のメソッドを実行する
+      method.invoke(null, emptyArray<String>())
+    } catch (e: ClassNotFoundException) {
+      // クラスが見つからない場合は、エラーメッセージを表示する
+      fail("Class not found: $className ${method.methodName}")
+    } catch (e: NoSuchMethodException) {
+      // メソッドが見つからない場合は、エラーメッセージを表示する
+      fail("Method not found: $className ${method.methodName}")
+    }
+
+    // 出力を検証する
+    TestUtils.assertOutput(PrintStreamExtension.getOutput(), method.expected)
   }
 }

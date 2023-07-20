@@ -5,13 +5,13 @@ import java.io.InputStream
 import java.nio.charset.Charset
 
 object MethodExecutor {
-  fun executeMethod(testData: TestData): Boolean {
+  fun executeMethod(simpleTestData: SimpleTestData): Boolean {
     val nativeEncoding: Charset = Charset.forName(System.getProperty("native.encoding"))
 
     return try {
-      val clazz = Class.forName(testData.className)
-      val method = clazz.getMethod(testData.methodName, Array<String>::class.java)
-      val inputList = testData.input
+      val clazz = Class.forName(simpleTestData.className)
+      val method = clazz.getMethod(simpleTestData.methodName, Array<String>::class.java)
+      val inputList = simpleTestData.input
       inputList.forEach {
         val bytes: InputStream =
           ByteArrayInputStream(it.toByteArray(nativeEncoding))

@@ -7,16 +7,16 @@ object TestLabelGenerator {
   /**
    * テストデータからテストラベルを生成します。
    *
-   * @param testData テストデータ
+   * @param simpleTestData テストデータ
    * @return 生成されたテストラベル
    */
-  fun generateLabel(testData: TestData): String {
+  fun generateLabel(simpleTestData: SimpleTestData): String {
     // 入力値が空の場合は、クラス名とメソッド名だけを使用してラベルを生成します。
-    return if (testData.input.all { it.isEmpty() }) {
-      generateLabel(testData.className, testData.methodName)
+    return if (simpleTestData.input.all { it.isEmpty() }) {
+      generateLabel(simpleTestData.className, simpleTestData.methodName)
     } else {
       // 入力値がある場合は、クラス名、メソッド名、入力値を使用してラベルを生成します。
-      generateLabel(testData.className, testData.methodName, testData.input)
+      generateLabel(simpleTestData.className, simpleTestData.methodName, simpleTestData.input)
     }
   }
 

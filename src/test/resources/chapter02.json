@@ -1,164 +1,162 @@
-{
-  "classes": [
-    {
-      "className": "Calc1",
-      "methodName": "main",
-      "input": [
-        ""
-      ],
-      "expected": [
-        "4",
-        "1",
-        "3"
-      ]
-    },
-    {
-      "className": "Calc2",
-      "methodName": "main",
-      "input": [
-        ""
-      ],
-      "expected": [
-        "10"
-      ]
-    },
-    {
-      "className": "Calc3",
-      "methodName": "main",
-      "input": [
-        ""
-      ],
-      "expected": [
-        "2 + 7 = 9",
-        "2 - 7 = -5"
-      ]
-    },
-    {
-      "className": "Hello4",
-      "methodName": "main",
-      "input": [
-        "John Smith"
-      ],
-      "expected": [
-        "お名前は?",
-        "John Smithさん、こんにちは"
-      ]
-    },
-    {
-      "className": "Hello4",
-      "methodName": "main",
-      "input": [
-        "田中一郎"
-      ],
-      "expected": [
-        "お名前は?",
-        "田中一郎さん、こんにちは"
-      ]
-    },
-    {
-      "className": "Calc4",
-      "methodName": "main",
-      "input": [
-        "128"
-      ],
-      "expected": [
-        "整数を入力してください",
-        "2倍すると256"
-      ]
-    },
-    {
-      "className": "ExeCalc",
-      "methodName": "main",
-      "input": [
-        ""
-      ],
-      "expected": [
-        "127 + 128 = 255",
-        "100 - 68 = 32",
-        "16 * 16 = 256",
-        "10 / 100 = 0",
-        "2005 % 4 = 1"
-      ]
-    },
-    {
-      "className": "Hello2",
-      "methodName": "main",
-      "input": [
-        ""
-      ],
-      "expected": [
-        "Hello!",
-        "How you doing?"
-      ]
-    },
-    {
-      "className": "Hello3",
-      "methodName": "main",
-      "input": [
-        ""
-      ],
-      "expected": [
-        "こんにちは",
-        "元気ですか？"
-      ]
-    },
-    {
-      "className": "Calc5",
-      "methodName": "main",
-      "input": [
-        ""
-      ],
-      "expected": [
-        "1.75",
-        "2.3333333333333335"
-      ]
-    },
-    {
-      "className": "DebugTraining1",
-      "methodName": "main",
-      "input": [
-        ""
-      ],
-      "expected": [
-        "Hello!",
-        "How you doing?",
-        "Okay thanks.",
-        "How about you?"
-      ]
-    },
-    {
-      "className": "DebugTraining2",
-      "methodName": "main",
-      "input": [
-        ""
-      ],
-      "expected": [
-        "こんにちは",
-        "元気ですか？"
-      ]
-    },
-    {
-      "className": "Trapez",
-      "methodName": "main",
-      "input": [
-        ""
-      ],
-      "expected": [
-        "台形の面積は175です"
-      ]
-    },
-    {
-      "className": "Laboratory",
-      "methodName": "main",
-      "input": [
-        ""
-      ],
-      "expected": [
-        "-200",
-        "0",
-        "0",
-        "2"
-      ]
-    }
-  ]
-}
+[
+  {
+    "className": "Calc1",
+    "methodName": "main",
+    "input": [
+      ""
+    ],
+    "expected": [
+      "4",
+      "1",
+      "3"
+    ]
+  },
+  {
+    "className": "Calc2",
+    "methodName": "main",
+    "input": [
+      ""
+    ],
+    "expected": [
+      "10"
+    ]
+  },
+  {
+    "className": "Calc3",
+    "methodName": "main",
+    "input": [
+      ""
+    ],
+    "expected": [
+      "2 + 7 = 9",
+      "2 - 7 = -5"
+    ]
+  },
+  {
+    "className": "Hello4",
+    "methodName": "main",
+    "input": [
+      "John Smith"
+    ],
+    "expected": [
+      "お名前は?",
+      "John Smithさん、こんにちは"
+    ]
+  },
+  {
+    "className": "Hello4",
+    "methodName": "main",
+    "input": [
+      "田中一郎"
+    ],
+    "expected": [
+      "お名前は?",
+      "田中一郎さん、こんにちは"
+    ]
+  },
+  {
+    "className": "Calc4",
+    "methodName": "main",
+    "input": [
+      "128"
+    ],
+    "expected": [
+      "整数を入力してください",
+      "2倍すると256"
+    ]
+  },
+  {
+    "className": "ExeCalc",
+    "methodName": "main",
+    "input": [
+      ""
+    ],
+    "expected": [
+      "127 + 128 = 255",
+      "100 - 68 = 32",
+      "16 * 16 = 256",
+      "10 / 100 = 0",
+      "2005 % 4 = 1"
+    ]
+  },
+  {
+    "className": "Hello2",
+    "methodName": "main",
+    "input": [
+      ""
+    ],
+    "expected": [
+      "Hello!",
+      "How you doing?"
+    ]
+  },
+  {
+    "className": "Hello3",
+    "methodName": "main",
+    "input": [
+      ""
+    ],
+    "expected": [
+      "こんにちは",
+      "元気ですか？"
+    ]
+  },
+  {
+    "className": "Calc5",
+    "methodName": "main",
+    "input": [
+      ""
+    ],
+    "expected": [
+      "1.75",
+      "2.3333333333333335"
+    ]
+  },
+  {
+    "className": "DebugTraining1",
+    "methodName": "main",
+    "input": [
+      ""
+    ],
+    "expected": [
+      "Hello!",
+      "How you doing?",
+      "Okay thanks.",
+      "How about you?"
+    ]
+  },
+  {
+    "className": "DebugTraining2",
+    "methodName": "main",
+    "input": [
+      ""
+    ],
+    "expected": [
+      "こんにちは",
+      "元気ですか？"
+    ]
+  },
+  {
+    "className": "Trapez",
+    "methodName": "main",
+    "input": [
+      ""
+    ],
+    "expected": [
+      "台形の面積は175です"
+    ]
+  },
+  {
+    "className": "Laboratory",
+    "methodName": "main",
+    "input": [
+      ""
+    ],
+    "expected": [
+      "-200",
+      "0",
+      "0",
+      "2"
+    ]
+  }
+]

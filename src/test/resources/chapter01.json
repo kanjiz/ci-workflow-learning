@@ -1,20 +1,18 @@
-{
-  "classes": [
-    {
-      "className": "Hello",
-      "methodName": "main",
-      "input": [],
-      "expected": [
-        "Hello!"
-      ]
-    },
-    {
-      "className": "HelloJava",
-      "methodName": "main",
-      "input": [],
-      "expected": [
-        "Hello Java world!"
-      ]
-    }
-  ]
-}
+[
+  {
+    "className": "Hello",
+    "methodName": "main",
+    "input": [],
+    "expected": [
+      "Hello!"
+    ]
+  },
+  {
+    "className": "HelloJava",
+    "methodName": "main",
+    "input": [],
+    "expected": [
+      "Hello Java world!"
+    ]
+  }
+]
