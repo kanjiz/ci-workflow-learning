@@ -31,3 +31,6 @@ build
 
 # Ignore VSCode build output directory
 bin/
+
+# Java class files
+*.class

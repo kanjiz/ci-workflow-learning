@@ -34,5 +34,48 @@
         ]
       }
     ]
+  },
+  {
+    "className": "Variable3",
+    "methods": [
+      {
+        "methodName": "main",
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "args",
+            "type": "String[]"
+          }
+        ],
+        "expected": [
+          "a = 5 * 15",
+          "a = 75",
+          "b = a",
+          "a = 75",
+          "b = 75",
+          "a = a + b",
+          "a = 150",
+          "b = 75"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "DataType02",
+    "methods": [
+      {
+        "methodName": "main",
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "args",
+            "type": "String[]"
+          }
+        ],
+        "expected": [
+          "値は 1"
+        ]
+      }
+    ]
   }
 ]
