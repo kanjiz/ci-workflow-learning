@@ -8,10 +8,10 @@ enum class TextbookChapter(
   CHAPTER_3(3, "第三章", "chapter03.json"),
   CHAPTER_4(4, "第四章", "chapter04.json"),
   CHAPTER_5(5, "第五章", "chapter05.json"),
-  CHAPTER_6(6, "Object-Oriented Programming", "chapter06.json"),
-  CHAPTER_7(7, "Inheritance and Polymorphism", "chapter07.json"),
-  CHAPTER_8(8, "Exceptions and Error Handling", "chapter08.json"),
-  CHAPTER_9(9, "File Input and Output", "chapter09.json"),
-  CHAPTER_10(10, "Recursion", "chapter10.json"),
-  CHAPTER_11(11, "Sorting and Searching", "chapter11.json")
+  CHAPTER_6(6, "第六章", "chapter06.json"),
+  CHAPTER_7(7, "第七章", "chapter07.json"),
+  CHAPTER_8(8, "第八章", "chapter08.json"),
+  CHAPTER_9(9, "第九章", "chapter09.json"),
+  CHAPTER_10(10, "第十章", "chapter10.json"),
+  CHAPTER_11(11, "第十一章", "chapter11.json")
 }

@@ -7,11 +7,11 @@ import io.kotest.core.spec.style.FunSpec
 import utility.ClassData
 
 class Chapter03Test : FunSpec({
-
+  val chapter = TextbookChapter.CHAPTER_3
   val unitTestRunner = UnitTestRunner()
 
-  context("第三章") {
-    val testDataManager = TestDataManager("chapter03.json")
+  context(chapter.chapterTitle) {
+    val testDataManager = TestDataManager(chapter.testDataFileName)
     val testDataList = testDataManager.getTestDataList()
 
     testDataList.forEach {
