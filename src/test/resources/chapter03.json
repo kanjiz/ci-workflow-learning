@@ -11,6 +11,7 @@
             "type": "String[]"
           }
         ],
+        "input": [],
         "expected": [
           "5"
         ]
@@ -29,6 +30,7 @@
             "type": "String[]"
           }
         ],
+        "input": [],
         "expected": [
           "100"
         ]
@@ -47,6 +49,7 @@
             "type": "String[]"
           }
         ],
+        "input": [],
         "expected": [
           "a = 5 * 15",
           "a = 75",
@@ -72,6 +75,7 @@
             "type": "String[]"
           }
         ],
+        "input": [],
         "expected": [
           "値は 1"
         ]
@@ -90,9 +94,58 @@
             "type": "String[]"
           }
         ],
+        "input": [],
         "expected": [
           "intVal=10, doubleVal=1.25で実行",
           "計算結果は 12.5"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "ExamString",
+    "methods": [
+      {
+        "methodName": "main",
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "args",
+            "type": "String[]"
+          }
+        ],
+        "input": [],
+        "expected": [
+          "① str1 = Hello!\n",
+          "② str1 = Hello!",
+          "② str2 = Hello!\n",
+          "③ str1 = How you doing?",
+          "③ str2 = Hello!"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "InputVariable",
+    "methods": [
+      {
+        "methodName": "main",
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "args",
+            "type": "String[]"
+          }
+        ],
+        "input": [
+          "Masahiko",
+          "38"
+        ],
+        "expected": [
+          "名前を入力してください",
+          "Masahikoさんは、何歳ですか?",
+          "Masahikoさんは、若く見えますね",
+          "33歳くらいだと思いました"
         ]
       }
     ]

@@ -7,6 +7,7 @@ data class MethodData(
   val methodName: String,
   val returnType: String,
   val parameters: List<ParameterData>,
+  val input: List<String>,
   val expected: List<String>
 ) {
   init {
@@ -25,6 +26,6 @@ data class MethodData(
   }
 
   override fun toString(): String {
-    return "$methodName: $returnType, parameters: $parameters, expected: $expected"
+    return "$methodName: $returnType, parameters: $parameters, input: $input, expected: $expected"
   }
 }

@@ -44,14 +44,18 @@ class UnitTestRunner : FunSpec() {
     TestUtils.assertOutput(PrintStreamExtension.getOutput(), simpleTestData.expected)
   }
 
-  fun runTest(className: String, method: MethodData) {
+  fun runTest(className: String, methodData: MethodData) {
     val nativeEncoding: Charset = Charset.forName(System.getProperty("native.encoding"))
     try {
       // テスト対象のクラスとメソッドを取得する
       val clazz = Class.forName(className)
-      val method = clazz.getMethod(method.methodName, Array<String>::class.java)
+      val method = clazz.getMethod(methodData.methodName, Array<String>::class.java)
 
-//      val inputList = method.input
+      val inputLines = methodData.input
+      val inputText = inputLines.joinToString(System.lineSeparator()) { it }
+      val inputStream: InputStream =
+        ByteArrayInputStream(inputText.toByteArray(nativeEncoding))
+      System.setIn(inputStream)
 //      inputList.forEach {
 //        val bytes: InputStream =
 //          ByteArrayInputStream(it.toByteArray(nativeEncoding))
@@ -61,13 +65,13 @@ class UnitTestRunner : FunSpec() {
       method.invoke(null, emptyArray<String>())
     } catch (e: ClassNotFoundException) {
       // クラスが見つからない場合は、エラーメッセージを表示する
-      fail("Class not found: $className ${method.methodName}")
+      fail("Class not found: $className ${methodData.methodName}")
     } catch (e: NoSuchMethodException) {
       // メソッドが見つからない場合は、エラーメッセージを表示する
-      fail("Method not found: $className ${method.methodName}")
+      fail("Method not found: $className ${methodData.methodName}")
     }
 
     // 出力を検証する
-    TestUtils.assertOutput(PrintStreamExtension.getOutput(), method.expected)
+    TestUtils.assertOutput(PrintStreamExtension.getOutput(), methodData.expected)
   }
 }
