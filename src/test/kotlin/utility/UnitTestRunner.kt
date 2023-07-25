@@ -5,7 +5,7 @@ import io.kotest.core.spec.style.FunSpec
 import java.io.ByteArrayInputStream
 import java.io.InputStream
 import java.nio.charset.Charset
-import kotlin.reflect.full.declaredMemberFunctions
+import kotlin.reflect.full.functions
 
 /**
  * ユニットテストを実行するためのクラスです。
@@ -50,7 +50,7 @@ class UnitTestRunner : FunSpec() {
     try {
       // テスト対象のクラスとメソッドを取得する
       val clazz = Class.forName(className).kotlin
-      val method = clazz.members.first { it.name == methodData.methodName }
+      val method = clazz.functions.first { it.name == methodData.methodName }
 
       val inputLines = methodData.input
       val inputText = inputLines.joinToString(System.lineSeparator()) { it }
