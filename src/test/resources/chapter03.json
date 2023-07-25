@@ -171,9 +171,14 @@
         "methodName": "main",
         "returnType": "void",
         "parameters": [],
-        "input": [],
+        "input": [
+          "48",
+          "32"
+        ],
         "expected": [
-          "面積は 100"
+          "縦の長さを入力してください",
+          "横の長さを入力してください",
+          "面積は1536"
         ]
       }
     ]
