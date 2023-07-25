@@ -40,6 +40,7 @@ dependencies {
   testImplementation("io.kotest:kotest-assertions-core:5.6.2")
   testImplementation("io.kotest:kotest-property:5.6.2")
   errorprone("com.google.errorprone:error_prone_core:2.20.0")
+  testImplementation(kotlin("reflect"))
 }
 
 tasks.withType<Checkstyle>().configureEach {

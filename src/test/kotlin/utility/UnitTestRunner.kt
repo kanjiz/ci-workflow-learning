@@ -5,6 +5,7 @@ import io.kotest.core.spec.style.FunSpec
 import java.io.ByteArrayInputStream
 import java.io.InputStream
 import java.nio.charset.Charset
+import kotlin.reflect.full.declaredMemberFunctions
 
 /**
  * ユニットテストを実行するためのクラスです。
@@ -48,8 +49,8 @@ class UnitTestRunner : FunSpec() {
     val nativeEncoding: Charset = Charset.forName(System.getProperty("native.encoding"))
     try {
       // テスト対象のクラスとメソッドを取得する
-      val clazz = Class.forName(className)
-      val method = clazz.getMethod(methodData.methodName, Array<String>::class.java)
+      val clazz = Class.forName(className).kotlin
+      val method = clazz.members.first { it.name == methodData.methodName }
 
       val inputLines = methodData.input
       val inputText = inputLines.joinToString(System.lineSeparator()) { it }
@@ -62,7 +63,7 @@ class UnitTestRunner : FunSpec() {
 //        System.setIn(bytes)
 //      }
       // テスト対象のメソッドを実行する
-      method.invoke(null, emptyArray<String>())
+      method.call(emptyArray<String>())
     } catch (e: ClassNotFoundException) {
       // クラスが見つからない場合は、エラーメッセージを表示する
       fail("Class not found: $className ${methodData.methodName}")

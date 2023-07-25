@@ -149,5 +149,33 @@
         ]
       }
     ]
+  },
+  {
+    "className": "Calc6",
+    "methods": [
+      {
+        "methodName": "main",
+        "returnType": "void",
+        "parameters": [],
+        "input": [],
+        "expected": [
+          "ans = 51"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "RectArea",
+    "methods": [
+      {
+        "methodName": "main",
+        "returnType": "void",
+        "parameters": [],
+        "input": [],
+        "expected": [
+          "面積は 100"
+        ]
+      }
+    ]
   }
 ]
