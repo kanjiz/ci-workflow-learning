@@ -77,5 +77,24 @@
         ]
       }
     ]
+  },
+  {
+    "className": "DataType03",
+    "methods": [
+      {
+        "methodName": "main",
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "args",
+            "type": "String[]"
+          }
+        ],
+        "expected": [
+          "intVal=10, doubleVal=1.25で実行",
+          "計算結果は 12.5"
+        ]
+      }
+    ]
   }
 ]
