@@ -1,10 +1,10 @@
 package chapter03
 
+import utility.ClassData
 import utility.TestDataManager
 import utility.TestLabelGenerator
 import utility.UnitTestRunner
 import io.kotest.core.spec.style.FunSpec
-import utility.ClassData
 
 class Chapter03Test : FunSpec({
   val chapter = TextbookChapter.CHAPTER_3

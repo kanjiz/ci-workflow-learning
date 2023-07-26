@@ -182,5 +182,46 @@
         ]
       }
     ]
+  },
+  {
+    "className": "TriArea",
+    "methods": [
+      {
+        "methodName": "main",
+        "returnType": "void",
+        "parameters": [],
+        "input": [
+          "38",
+          "24"
+        ],
+        "expected": [
+          "底辺の長さを入力してください",
+          "高さを入力してください",
+          "面積は456"
+        ]
+      }
+    ]
+  },
+  {
+    "className": "Swap",
+    "methods": [
+      {
+        "methodName": "main",
+        "returnType": "void",
+        "parameters": [],
+        "input": [
+          "1000",
+          "500"
+        ],
+        "expected": [
+          "入れ替え前",
+          "Xは1000",
+          "Yは500",
+          "入れ替え後",
+          "Xは500",
+          "Yは1000"
+        ]
+      }
+    ]
   }
 ]
