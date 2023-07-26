@@ -2,7 +2,9 @@
  * 消費税込みの金額を求めるプログラム
  */
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class ConsTax {
   public static void main(String[] args) throws IOException {
