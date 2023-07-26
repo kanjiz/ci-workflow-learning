@@ -17,6 +17,6 @@ public class ConsTax {
     System.out.println("金額を入力してください");
     money = Integer.parseInt(br.readLine()); // 金額の入力
     money *= 1.08; // 税込み金額を求める
-    System.out.println("税込み\\" + +money); // 税込み金額を表示する
+    System.out.println("税込み\\" + money); // 税込み金額を表示する
   }
 }
