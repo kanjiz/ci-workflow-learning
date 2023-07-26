@@ -223,5 +223,22 @@
         ]
       }
     ]
+  },
+  {
+    "className": "ConsTax",
+    "methods": [
+      {
+        "methodName": "main",
+        "returnType": "void",
+        "parameters": [],
+        "input": [
+          "1230"
+        ],
+        "expected": [
+          "金額を入力してください",
+          "税込み\\1328"
+        ]
+      }
+    ]
   }
 ]
